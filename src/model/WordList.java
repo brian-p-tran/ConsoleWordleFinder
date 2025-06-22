@@ -1,3 +1,5 @@
+package model;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -41,6 +43,7 @@ public class WordList {
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String word;
             while ((word = reader.readLine()) != null) {
+                word = word.trim().toLowerCase();
                 root.insertWord(word); //Inserting Word into Trie.
             }
         } catch (IOException e) {

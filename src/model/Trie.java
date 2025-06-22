@@ -1,3 +1,5 @@
+package model;
+
 public class Trie {
     private Trie[] children;
     private boolean isWord;
@@ -16,7 +18,7 @@ public class Trie {
             if (curr.getChild(currentChar - 'a') == null) {
                 curr.setChild(currentChar);
             }
-            curr = getChild(currentChar - 'a');
+            curr = curr.getChild(currentChar - 'a');
         }
 
         curr.setIsWord(true);
@@ -29,7 +31,7 @@ public class Trie {
         for (int i = 0; i < word.length(); i++) {
             char currentChar = word.charAt(i);
             if (curr.getChild(currentChar - 'a') == null) return false;
-            curr = getChild(currentChar - 'a');
+            curr = curr.getChild(currentChar - 'a');
         }
 
         return curr.getIsWord();
@@ -42,7 +44,7 @@ public class Trie {
         for (int i = 0; i < word.length(); i++) {
             char currentChar = word.charAt(i);
             if (curr.getChild(currentChar - 'a') == null) return false;
-            curr = getChild(currentChar - 'a');
+            curr = curr.getChild(currentChar - 'a');
         }
 
         return true;
