@@ -37,12 +37,11 @@ public class WordList {
         return true;
     }
 
-    public static void readFromFile(String fileName) {
+    public static void readFromFile(Trie root, String fileName) {
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String word;
             while ((word = reader.readLine()) != null) {
-                //Word is going to be each word
-                //Create a data structure and add a line here to add each word into the data structure.
+                root.insertWord(word); //Inserting Word into Trie.
             }
         } catch (IOException e) {
             System.err.println("Error when reading file: " + e.getMessage());

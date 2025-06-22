@@ -8,8 +8,8 @@ public class Trie {
     }
 
     // O(n) length of String
-    public void insertWord(Trie root, String word) {
-        Trie curr = root;
+    public void insertWord(String word) {
+        Trie curr = this;
 
         for (int i = 0; i < word.length(); i++) {
             char currentChar = word.charAt(i);
@@ -23,8 +23,8 @@ public class Trie {
     }
 
     // O(n) length of String
-    public boolean findWord(Trie root, String word) {
-        Trie curr = root;
+    public boolean findWord(String word) {
+        Trie curr = this;
 
         for (int i = 0; i < word.length(); i++) {
             char currentChar = word.charAt(i);
@@ -36,8 +36,8 @@ public class Trie {
     }
 
     // O(n) length of String
-    public boolean isPrefix(Trie root, String word) {
-        Trie curr = root;
+    public boolean isPrefix(String word) {
+        Trie curr = this;
 
         for (int i = 0; i < word.length(); i++) {
             char currentChar = word.charAt(i);
