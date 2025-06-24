@@ -3,10 +3,14 @@ package model;
 public class Trie {
     private Trie[] children;
     private boolean isWord;
+    private int numOfChildren;
+    private int rank;
 
     public Trie() {
         children = new Trie[26];
         isWord = false;
+        numOfChildren = 1;
+        rank = 0;
     }
 
     // O(n) length of String
@@ -16,6 +20,7 @@ public class Trie {
         for (int i = 0; i < word.length(); i++) {
             char currentChar = word.charAt(i);
             if (curr.getChild(currentChar - 'a') == null) {
+                this.numOfChildren += 1;
                 curr.setChild(currentChar);
             }
             curr = curr.getChild(currentChar - 'a');
